@@ -37,7 +37,6 @@
   },
   "scripts": {
     "version": "git add package.json",
-    "postversion": "git push && git push --tags",
-    "prepublishOnly": "npm test || true"
+    "postversion": "git push && git push --tags"
   }
 }
