@@ -527,12 +527,32 @@ async function main() {
     console.log(`  ${green}✓ VBB uninstalled successfully${reset}\n`);
   } else {
     console.log(`  ${green}✓ VBB installed successfully${reset}\n`);
-    console.log(`  ${dim}Available commands:${reset}`);
-    console.log(`  ${cyan}/vbb:help${reset}     Show all VBB commands`);
-    console.log(`  ${cyan}/vbb:quick${reset}    Quick 5-minute validation`);
-    console.log(`  ${cyan}/vbb:validate${reset}  Deep validation (30-60 min)`);
-    console.log(`  ${cyan}/vbb:assess${reset}    Full assessment`);
-    console.log();
+
+    // Show installed commands dynamically
+    const installedCommands = [];
+    for (const runtime of selectedRuntimes) {
+      const configDir = isGlobal ? getGlobalDir(runtime) : path.join(process.cwd(), getDirName(runtime));
+      const vbbCommandsDir = path.join(configDir, 'commands', 'vbb');
+      if (fs.existsSync(vbbCommandsDir)) {
+        const files = fs.readdirSync(vbbCommandsDir);
+        for (const file of files) {
+          if (file.endsWith('.md')) {
+            const cmdName = file.replace('.md', '');
+            if (!installedCommands.includes(cmdName)) {
+              installedCommands.push(cmdName);
+            }
+          }
+        }
+      }
+    }
+
+    if (installedCommands.length > 0) {
+      console.log(`  ${dim}Available commands:${reset}`);
+      for (const cmd of installedCommands.sort()) {
+        console.log(`  ${cyan}/vbb:${cmd}${reset}`);
+      }
+      console.log();
+    }
   }
 }
 
