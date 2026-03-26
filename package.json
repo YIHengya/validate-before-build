@@ -1,6 +1,6 @@
 {
   "name": "vbb-cc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validation Before Build - A decision framework for validating ideas before execution. Complements GSD by handling the \"should we build this?\" phase.",
   "bin": {
     "vbb-cc": "bin/install.js"
