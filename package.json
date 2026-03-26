@@ -23,11 +23,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbb-build/validate-before-build.git"
+    "url": "git+https://github.com/YIHengya/validate-before-build.git"
   },
-  "homepage": "https://github.com/vbb-build/validate-before-build",
+  "homepage": "https://github.com/YIHengya/validate-before-build",
   "bugs": {
-    "url": "https://github.com/vbb-build/validate-before-build/issues"
+    "url": "https://github.com/YIHengya/validate-before-build/issues"
   },
   "engines": {
     "node": ">=20.0.0"
