@@ -1,0 +1,43 @@
+{
+  "name": "vbb-cc",
+  "version": "0.1.0",
+  "description": "Validation Before Build - A decision framework for validating ideas before execution. Complements GSD by handling the \"should we build this?\" phase.",
+  "bin": {
+    "vbb-cc": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "commands",
+    "agents"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "validation",
+    "feasibility",
+    "decision-framework",
+    "idea-validation",
+    "gsd-complement"
+  ],
+  "author": "VBB Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbb-build/validate-before-build.git"
+  },
+  "homepage": "https://github.com/vbb-build/validate-before-build",
+  "bugs": {
+    "url": "https://github.com/vbb-build/validate-before-build/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "version": "git add package.json",
+    "postversion": "git push && git push --tags",
+    "prepublishOnly": "npm test || true"
+  }
+}
